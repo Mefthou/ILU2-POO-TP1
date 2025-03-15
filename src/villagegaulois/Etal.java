@@ -59,8 +59,6 @@ public class Etal {
 
 	public String acheterProduit(int quantiteAcheter, Gaulois acheteur) {
 		if (acheteur == null) {
-			NullPointerException e = new NullPointerException("L'acheteur ne peut pas être inexistant");
-			e.printStackTrace(System.err);
 			return " " ;
 		}
 		if (quantiteAcheter < 1) {

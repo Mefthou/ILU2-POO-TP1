@@ -24,7 +24,14 @@ public class Scenario {
 		village.ajouterHabitant(obelix);
 		village.ajouterHabitant(druide);
 		village.ajouterHabitant(abraracourcix);
-		village.afficherVillageois();
+		try {
+            String infoVillageois = village.afficherVillageois();
+            System.out.println(infoVillageois);
+        } catch (Village.VillageSansChefException e) {
+            System.out.println("Une erreur est survenue lors de l'affichage des villageois : " + e.getMessage());
+            System.out.println("Il faut d'abord désigner un chef pour ce village.");
+        }
+
 
 		System.out.println(village.rechercherVendeursProduit("fleurs"));
 		System.out.println(village.installerVendeur(bonemine, "fleurs", 20));
